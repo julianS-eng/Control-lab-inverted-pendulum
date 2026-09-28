@@ -1,0 +1,1214 @@
+{
+ "settings": {
+  "mc_samples": 500,
+  "roa_points": 61,
+  "delay_mc": 100,
+  "seed": 20260928
+ },
+ "config": {
+  "Ts": 0.01,
+  "substeps": 4,
+  "track_limit": 1.0,
+  "force_disturbance_std": 0.05,
+  "sigma_x": 0.001,
+  "sigma_theta": 0.002,
+  "u_max": 10.0,
+  "delay_steps": 1,
+  "params": {
+   "M": 0.5,
+   "m": 0.2,
+   "l": 0.3,
+   "J": 0.005999999999999999,
+   "b_c": 0.1,
+   "b_p": 0.002,
+   "g": 9.81
+  }
+ },
+ "structure": {
+  "A": [
+   [
+    0.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    -0.18181818181818185,
+    -2.675454545454546,
+    0.009090909090909094
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   [
+    0.0,
+    0.4545454545454547,
+    31.213636363636372,
+    -0.10606060606060609
+   ]
+  ],
+  "B": [
+   0.0,
+   1.8181818181818183,
+   0.0,
+   -4.545454545454547
+  ],
+  "open_loop_poles": [
+   -5.660408831038643,
+   -0.14283167406803843,
+   0.0,
+   5.51536171722789
+  ],
+  "unstable_pole": 5.51536171722789,
+  "rhp_zero_x": 4.9522722057657536,
+  "controllability": {
+   "rank": 4,
+   "n": 4,
+   "cond": 133.6286584563333,
+   "rank_discrete": 4
+  },
+  "observability": [
+   {
+    "output": "x and theta",
+    "rank": 4,
+    "cond": 33.77516522174212,
+    "unobservable_modes": []
+   },
+   {
+    "output": "x only",
+    "rank": 4,
+    "cond": 3.1056900223948096,
+    "unobservable_modes": []
+   },
+   {
+    "output": "theta only",
+    "rank": 3,
+    "cond": Infinity,
+    "unobservable_modes": [
+     0.0
+    ]
+   }
+  ],
+  "gramian_1s_eig_min": 3.311021278832989e-05,
+  "gramian_1s_eig_max": 278.62433757898714
+ },
+ "linearization": {
+  "upright_theta_after_0_8s": {
+   "nonlinear": 0.7934196687624175,
+   "linear": 0.8352468287764582
+  },
+  "hanging_period_small": {
+   "nonlinear": 1.1256666666666668,
+   "linear": 1.125
+  },
+  "hanging_period_large": {
+   "nonlinear": 1.221,
+   "linear": 1.125
+  },
+  "rk4_energy_drift_10s_J": 4.2559067381375826e-11,
+  "rk4_energy_initial_J": -0.4715531321109252
+ },
+ "lqr": {
+  "Q_diag": [
+   16.0,
+   1.0,
+   99.99999999999999,
+   0.4444444444444444
+  ],
+  "R": 0.1111111111111111,
+  "limits": [
+   0.25,
+   1.0,
+   0.1,
+   1.5,
+   3.0
+  ],
+  "K": [
+   -10.628309143356617,
+   -10.528244287614044,
+   -53.79755100991549,
+   -9.188176401820519
+  ],
+  "closed_loop_poles_s": [
+   [
+    -10.766520242414684,
+    5.434224477794095
+   ],
+   [
+    -10.766520242414684,
+    -5.434224477794095
+   ],
+   [
+    -1.5159726197042371,
+    1.1743103780954305
+   ],
+   [
+    -1.5159726197042371,
+    -1.1743103780954305
+   ]
+  ],
+  "sweep": {
+   "rho": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0
+   ],
+   "settling": [
+    8.52,
+    7.699999999999999,
+    7.699999999999999,
+    2.72,
+    2.74,
+    3.3000000000000003,
+    3.5600000000000005,
+    4.29,
+    5.3
+   ],
+   "energy": [
+    293.60591135702066,
+    131.63347178991478,
+    46.996744095332616,
+    19.318037116666336,
+    8.29502421894424,
+    4.0324018229644185,
+    2.2548249927133392,
+    1.4422471370871555,
+    1.0427471559437995
+   ],
+   "peak_force": [
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    6.026305212192721,
+    3.4085061614592567,
+    1.9467249963601394,
+    1.2533024081793165,
+    1.0751588853107146
+   ],
+   "noise_force": [
+    5.938326610549372,
+    3.8461054354010353,
+    2.205298933069482,
+    1.3497496821246828,
+    0.8753131903139757,
+    0.610618551606727,
+    0.4628187846034538,
+    0.38001335995774166,
+    0.3327102736618221
+   ],
+   "phase_margin": [
+    17.031578694256716,
+    21.081753933290223,
+    27.98121562204512,
+    36.34155761328818,
+    41.73748367853999,
+    43.73313519673638,
+    44.3658953050928,
+    44.63530816426623,
+    44.86560523977342
+   ],
+   "gain_low_db": [
+    -21.39156647700217,
+    -19.149109681998038,
+    -16.39469866612791,
+    -13.567205461976904,
+    -10.981617839725962,
+    -8.844731744715018,
+    -7.284644969719568,
+    -6.313133746576022,
+    -5.7996091430102235
+   ],
+   "slowest_pole": [
+    -1.537777859718021,
+    -1.5372888501988833,
+    -1.5357462843446084,
+    -1.5309062106348441,
+    -1.5159726197042371,
+    -1.4722327533692383,
+    -1.3618670204442729,
+    -1.1606361941601921,
+    -0.9185175848010454
+   ]
+  }
+ },
+ "balance": {
+  "rows": [
+   {
+    "key": "pid",
+    "label": "PID cascade",
+    "realistic": true,
+    "step_settling_s": 2.47,
+    "step_overshoot_pct": 2.5697966338532163,
+    "step_undershoot_pct": 6.980040628765684,
+    "step_peak_angle_deg": 6.281524113992338,
+    "step_energy_N2s": 2.613803219999218,
+    "step_peak_force_N": 2.681495656379045,
+    "step_saturated_pct": 0.0,
+    "rec_settling_s": 4.96,
+    "rec_peak_cart_m": 0.21779646202627356,
+    "rec_energy_N2s": 4.1193523842174065,
+    "rec_peak_force_N": 5.6440470670555865,
+    "steady_rms_angle_mrad": 1.8536788388776124,
+    "steady_rms_force_N": 0.42889422595089965
+   },
+   {
+    "key": "pole_placement",
+    "label": "Pole placement + KF",
+    "realistic": true,
+    "step_settling_s": 2.17,
+    "step_overshoot_pct": 1.8005964654099538,
+    "step_undershoot_pct": 6.8362759123774985,
+    "step_peak_angle_deg": 6.154322288417777,
+    "step_energy_N2s": 3.3860105555093623,
+    "step_peak_force_N": 3.096454907765025,
+    "step_saturated_pct": 0.0,
+    "rec_settling_s": 2.04,
+    "rec_peak_cart_m": 0.2162115827909966,
+    "rec_energy_N2s": 4.662728793547667,
+    "rec_peak_force_N": 6.475967966631507,
+    "steady_rms_angle_mrad": 1.8963800231786268,
+    "steady_rms_force_N": 0.5431343490842174
+   },
+   {
+    "key": "lqr_ideal",
+    "label": "LQR (ideal state)",
+    "realistic": false,
+    "step_settling_s": 2.87,
+    "step_overshoot_pct": 2.053599277890261,
+    "step_undershoot_pct": 7.407276781316935,
+    "step_peak_angle_deg": 6.239690570712793,
+    "step_energy_N2s": 1.6636777119774906,
+    "step_peak_force_N": 5.3009322475347656,
+    "step_saturated_pct": 0.0,
+    "rec_settling_s": 1.9000000000000001,
+    "rec_peak_cart_m": 0.1662805421085324,
+    "rec_energy_N2s": 4.918112005385932,
+    "rec_peak_force_N": 10.0,
+    "steady_rms_angle_mrad": 0.2375084924813892,
+    "steady_rms_force_N": 0.02174034844242809
+   },
+   {
+    "key": "lqg",
+    "label": "LQG (LQR + KF)",
+    "realistic": true,
+    "step_settling_s": 2.74,
+    "step_overshoot_pct": 2.318067955062242,
+    "step_undershoot_pct": 7.6291425555121055,
+    "step_peak_angle_deg": 6.3711604183911215,
+    "step_energy_N2s": 8.29502421894424,
+    "step_peak_force_N": 6.026305212192721,
+    "step_saturated_pct": 0.0,
+    "rec_settling_s": 2.0,
+    "rec_peak_cart_m": 0.16803853528147372,
+    "rec_energy_N2s": 10.55354695324938,
+    "rec_peak_force_N": 10.0,
+    "steady_rms_angle_mrad": 2.257927052718523,
+    "steady_rms_force_N": 0.8975513473700936
+   },
+   {
+    "key": "lqg_delay",
+    "label": "LQG + delay comp.",
+    "realistic": true,
+    "step_settling_s": 2.75,
+    "step_overshoot_pct": 2.2969373937856252,
+    "step_undershoot_pct": 7.199346896907616,
+    "step_peak_angle_deg": 6.162963116765119,
+    "step_energy_N2s": 7.727190711003153,
+    "step_peak_force_N": 4.876043333433504,
+    "step_saturated_pct": 0.0,
+    "rec_settling_s": 2.0,
+    "rec_peak_cart_m": 0.176646954967127,
+    "rec_energy_N2s": 9.714118694825922,
+    "rec_peak_force_N": 10.0,
+    "steady_rms_angle_mrad": 2.065637461131907,
+    "steady_rms_force_N": 0.8790952215399453
+   }
+  ]
+ },
+ "margins": {
+  "rows": [
+   {
+    "key": "pid",
+    "label": "PID cascade",
+    "stable": true,
+    "spectral_radius": 0.9963424708103114,
+    "gain_low": 0.5055299411166233,
+    "gain_high": 3.44216027289728,
+    "gain_low_db": -5.925062345410122,
+    "gain_high_db": 10.736621759193895,
+    "phase_margin_deg": 39.43311277465314,
+    "crossover_rad_s": 14.808445745204518,
+    "delay_margin_ms": 46.47602213424789,
+    "delay_margin_samples": 4,
+    "n_controller_states": 5
+   },
+   {
+    "key": "pole_placement",
+    "label": "Pole placement + KF",
+    "stable": true,
+    "spectral_radius": 0.9806343359348558,
+    "gain_low": 0.43981113436195085,
+    "gain_high": 3.3768439361679703,
+    "gain_low_db": -7.13467560269944,
+    "gain_high_db": 10.570219795904833,
+    "phase_margin_deg": 45.138473818089125,
+    "crossover_rad_s": 14.789144697586568,
+    "delay_margin_ms": 53.26981401294114,
+    "delay_margin_samples": 5,
+    "n_controller_states": 5
+   },
+   {
+    "key": "lqr_ideal",
+    "label": "LQR (ideal state)",
+    "stable": true,
+    "spectral_radius": 0.9850253176945946,
+    "gain_low": 0.26263718301055006,
+    "gain_high": 4.1942280187301595,
+    "gain_low_db": -11.612875768042697,
+    "gain_high_db": 12.453040742826971,
+    "phase_margin_deg": 46.954484281086486,
+    "crossover_rad_s": 22.502424367933745,
+    "delay_margin_ms": 36.418758080515765,
+    "delay_margin_samples": 3,
+    "n_controller_states": 0
+   },
+   {
+    "key": "lqg",
+    "label": "LQG (LQR + KF)",
+    "stable": true,
+    "spectral_radius": 0.9850253176945939,
+    "gain_low": 0.2824353859844394,
+    "gain_high": 2.5024729261348697,
+    "gain_low_db": -10.981617839725962,
+    "gain_high_db": 7.967387752247235,
+    "phase_margin_deg": 41.73748367853999,
+    "crossover_rad_s": 21.91162174056756,
+    "delay_margin_ms": 33.2452120757105,
+    "delay_margin_samples": 3,
+    "n_controller_states": 5
+   },
+   {
+    "key": "lqg_delay",
+    "label": "LQG + delay comp.",
+    "stable": true,
+    "spectral_radius": 0.9849546039849435,
+    "gain_low": 0.31775032664571007,
+    "gain_high": 2.9238885258177527,
+    "gain_low_db": -9.958279886424387,
+    "gain_high_db": 9.319216219717234,
+    "phase_margin_deg": 44.49455170002489,
+    "crossover_rad_s": 19.296387421563207,
+    "delay_margin_ms": 40.244653540510434,
+    "delay_margin_samples": 4,
+    "n_controller_states": 5
+   }
+  ]
+ },
+ "kalman": {
+  "rms_error": {
+   "x": 0.00068765095879941,
+   "x_dot": 0.025430834934356484,
+   "theta": 0.0014352289792855851,
+   "theta_dot": 0.08276623520003074
+  },
+  "rms_measurement_error": {
+   "x": 0.0010095677415383716,
+   "theta": 0.001959155000890878
+  },
+  "rms_finite_difference_error": {
+   "x_dot": 0.1403297552793207,
+   "theta_dot": 0.2875655867151258
+  },
+  "mean_nis": 1.5193766448138821,
+  "nis_expected": 2.0,
+  "steady_state_gain": [
+   [
+    0.5109825156049035,
+    -0.047130492431526776
+   ],
+   [
+    19.32686877621366,
+    -5.205328737589218
+   ],
+   [
+    -0.188521969726107,
+    0.6657196571469616
+   ],
+   [
+    -20.788244154337857,
+    36.42060430708594
+   ]
+  ],
+  "swingup_estimators": [
+   {
+    "estimator": "linear KF",
+    "success": false,
+    "rms_rate_error": 3.9876675298850963,
+    "rms_angle_error": 0.030120339566755472
+   },
+   {
+    "estimator": "EKF",
+    "success": true,
+    "rms_rate_error": 0.08560433536166269,
+    "rms_angle_error": 0.0014557474254798643
+   }
+  ]
+ },
+ "swingup": {
+  "success": true,
+  "catch_time_s": 4.07,
+  "settling_time_s": 5.19,
+  "peak_cart_m": 0.4575252090975203,
+  "energy_N2s": 45.66267480220787,
+  "peak_force_N": 7.891932556746384,
+  "mode_switches": 1,
+  "gif_bytes": 512072
+ },
+ "roa": {
+  "theta_range": [
+   -0.9,
+   0.9
+  ],
+  "omega_range": [
+   -4.0,
+   4.0
+  ],
+  "grid": 61,
+  "rows": [
+   {
+    "key": "pid",
+    "label": "PID cascade",
+    "fraction": 0.5474334856221446,
+    "area_rad2_s": 8.148000000000005,
+    "max_theta0_at_rest_deg": 30.93972093706446
+   },
+   {
+    "key": "pole_placement",
+    "label": "Pole placement + KF",
+    "fraction": 0.6167696855683956,
+    "area_rad2_s": 9.180000000000007,
+    "max_theta0_at_rest_deg": 34.377467707849405
+   },
+   {
+    "key": "lqr_ideal",
+    "label": "LQR (ideal state)",
+    "fraction": 0.6355818328406342,
+    "area_rad2_s": 9.460000000000006,
+    "max_theta0_at_rest_deg": 36.09634109324186
+   },
+   {
+    "key": "lqg",
+    "label": "LQG (LQR + KF)",
+    "fraction": 0.6350443429185703,
+    "area_rad2_s": 9.452000000000007,
+    "max_theta0_at_rest_deg": 36.09634109324186
+   },
+   {
+    "key": "lqg_delay",
+    "label": "LQG + delay comp.",
+    "fraction": 0.6334318731523784,
+    "area_rad2_s": 9.428000000000006,
+    "max_theta0_at_rest_deg": 34.377467707849405
+   }
+  ]
+ },
+ "monte_carlo": {
+  "scenario": {
+   "tilt": 0.25,
+   "rate": 0.5,
+   "position": 0.1,
+   "step": 0.4,
+   "t_step": 2.0,
+   "push": 8.0,
+   "t_push": 6.0,
+   "push_width": 0.1,
+   "duration": 10.0
+  },
+  "uncertainty": {
+   "moderate": {
+    "label": "moderate",
+    "cart_mass": 0.2,
+    "pole_mass": 0.2,
+    "length": 0.2,
+    "friction_factor": 2.0
+   },
+   "severe": {
+    "label": "severe",
+    "cart_mass": 0.4,
+    "pole_mass": 0.5,
+    "length": 0.4,
+    "friction_factor": 4.0
+   },
+   "extreme": {
+    "label": "extreme",
+    "cart_mass": 0.6,
+    "pole_mass": 0.7,
+    "length": 0.6,
+    "friction_factor": 8.0
+   }
+  },
+  "rows": [
+   {
+    "key": "pid",
+    "label": "PID cascade",
+    "uncertainty": "moderate",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 9.17,
+    "p95_settling_s": 9.67,
+    "median_energy_N2s": 14.947737740936985
+   },
+   {
+    "key": "pole_placement",
+    "label": "Pole placement + KF",
+    "uncertainty": "moderate",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.82,
+    "p95_settling_s": 7.92,
+    "median_energy_N2s": 14.174373797442886
+   },
+   {
+    "key": "lqr_ideal",
+    "label": "LQR (ideal state)",
+    "uncertainty": "moderate",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.58,
+    "p95_settling_s": 7.63,
+    "median_energy_N2s": 12.607179090563598
+   },
+   {
+    "key": "lqg",
+    "label": "LQG (LQR + KF)",
+    "uncertainty": "moderate",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.69,
+    "p95_settling_s": 7.83,
+    "median_energy_N2s": 21.524700274924424
+   },
+   {
+    "key": "lqg_delay",
+    "label": "LQG + delay comp.",
+    "uncertainty": "moderate",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.78,
+    "p95_settling_s": 7.890000000000001,
+    "median_energy_N2s": 19.935958853496622
+   },
+   {
+    "key": "swingup",
+    "label": "Energy swing-up + LQR",
+    "uncertainty": "moderate",
+    "n": 500,
+    "rate": 0.996,
+    "ci95": [
+     0.9855339859585811,
+     0.9989023924587627
+    ],
+    "median_settling_s": 5.61,
+    "p95_settling_s": 6.92,
+    "median_energy_N2s": 53.27876129538632
+   },
+   {
+    "key": "pid",
+    "label": "PID cascade",
+    "uncertainty": "severe",
+    "n": 500,
+    "rate": 0.99,
+    "ci95": [
+     0.976806564621235,
+     0.9957213092184797
+    ],
+    "median_settling_s": 9.28,
+    "p95_settling_s": 9.7055,
+    "median_energy_N2s": 15.816373846297179
+   },
+   {
+    "key": "pole_placement",
+    "label": "Pole placement + KF",
+    "uncertainty": "severe",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.890000000000001,
+    "p95_settling_s": 8.350499999999998,
+    "median_energy_N2s": 14.998911580952393
+   },
+   {
+    "key": "lqr_ideal",
+    "label": "LQR (ideal state)",
+    "uncertainty": "severe",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.59,
+    "p95_settling_s": 7.7,
+    "median_energy_N2s": 12.975085039257696
+   },
+   {
+    "key": "lqg",
+    "label": "LQG (LQR + KF)",
+    "uncertainty": "severe",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.71,
+    "p95_settling_s": 7.99,
+    "median_energy_N2s": 22.96458424436601
+   },
+   {
+    "key": "lqg_delay",
+    "label": "LQG + delay comp.",
+    "uncertainty": "severe",
+    "n": 500,
+    "rate": 1.0,
+    "ci95": [
+     0.9923753814690964,
+     1.0
+    ],
+    "median_settling_s": 7.79,
+    "p95_settling_s": 8.02,
+    "median_energy_N2s": 20.884000747614866
+   },
+   {
+    "key": "swingup",
+    "label": "Energy swing-up + LQR",
+    "uncertainty": "severe",
+    "n": 500,
+    "rate": 0.898,
+    "ci95": [
+     0.8683647750455783,
+     0.9215660286038228
+    ],
+    "median_settling_s": 6.0600000000000005,
+    "p95_settling_s": 8.19,
+    "median_energy_N2s": 61.8340757462684
+   },
+   {
+    "key": "pid",
+    "label": "PID cascade",
+    "uncertainty": "extreme",
+    "n": 500,
+    "rate": 0.874,
+    "ci95": [
+     0.842031642241812,
+     0.9002651430970722
+    ],
+    "median_settling_s": 9.32,
+    "p95_settling_s": 9.877,
+    "median_energy_N2s": 16.92185566857409
+   },
+   {
+    "key": "pole_placement",
+    "label": "Pole placement + KF",
+    "uncertainty": "extreme",
+    "n": 500,
+    "rate": 0.92,
+    "ci95": [
+     0.8928931229079627,
+     0.9407021975260784
+    ],
+    "median_settling_s": 7.99,
+    "p95_settling_s": 9.05,
+    "median_energy_N2s": 16.128481925243463
+   },
+   {
+    "key": "lqr_ideal",
+    "label": "LQR (ideal state)",
+    "uncertainty": "extreme",
+    "n": 500,
+    "rate": 0.998,
+    "ci95": [
+     0.9887590072528046,
+     0.9996468726904154
+    ],
+    "median_settling_s": 7.61,
+    "p95_settling_s": 8.279499999999997,
+    "median_energy_N2s": 14.065846494394332
+   },
+   {
+    "key": "lqg",
+    "label": "LQG (LQR + KF)",
+    "uncertainty": "extreme",
+    "n": 500,
+    "rate": 0.932,
+    "ci95": [
+     0.9064785429161282,
+     0.9509337866731715
+    ],
+    "median_settling_s": 7.74,
+    "p95_settling_s": 8.726999999999997,
+    "median_energy_N2s": 25.29972329583788
+   },
+   {
+    "key": "lqg_delay",
+    "label": "LQG + delay comp.",
+    "uncertainty": "extreme",
+    "n": 500,
+    "rate": 0.958,
+    "ci95": [
+     0.9366479487604386,
+     0.9723679006652538
+    ],
+    "median_settling_s": 7.83,
+    "p95_settling_s": 8.764,
+    "median_energy_N2s": 22.506917254440342
+   },
+   {
+    "key": "swingup",
+    "label": "Energy swing-up + LQR",
+    "uncertainty": "extreme",
+    "n": 500,
+    "rate": 0.67,
+    "ci95": [
+     0.627624826873818,
+     0.709782802825675
+    ],
+    "median_settling_s": 6.550000000000001,
+    "p95_settling_s": 12.855,
+    "median_energy_N2s": 75.89483370473747
+   }
+  ],
+  "swingup_ablation": [
+   {
+    "variant": "no adaptation",
+    "uncertainty": "moderate",
+    "rate": 0.654,
+    "ci95": [
+     0.6112721337613813,
+     0.6943794837311004
+    ],
+    "median_settling_s": 4.8100000000000005
+   },
+   {
+    "variant": "adaptation (default)",
+    "uncertainty": "moderate",
+    "rate": 0.996,
+    "ci95": [
+     0.9855339859585811,
+     0.9989023924587627
+    ],
+    "median_settling_s": 5.61
+   },
+   {
+    "variant": "adaptation + convergence gate",
+    "uncertainty": "moderate",
+    "rate": 0.888,
+    "ci95": [
+     0.8573456933034787,
+     0.9127376027165404
+    ],
+    "median_settling_s": 4.8500000000000005
+   },
+   {
+    "variant": "no adaptation",
+    "uncertainty": "severe",
+    "rate": 0.394,
+    "ci95": [
+     0.3521334205007971,
+     0.4374829986277544
+    ],
+    "median_settling_s": 5.01
+   },
+   {
+    "variant": "adaptation (default)",
+    "uncertainty": "severe",
+    "rate": 0.898,
+    "ci95": [
+     0.8683647750455783,
+     0.9215660286038228
+    ],
+    "median_settling_s": 6.0600000000000005
+   },
+   {
+    "variant": "adaptation + convergence gate",
+    "uncertainty": "severe",
+    "rate": 0.608,
+    "ci95": [
+     0.5645397124401949,
+     0.6498133699571299
+    ],
+    "median_settling_s": 5.37
+   },
+   {
+    "variant": "no adaptation",
+    "uncertainty": "extreme",
+    "rate": 0.368,
+    "ci95": [
+     0.32688381653354137,
+     0.41112908275861715
+    ],
+    "median_settling_s": 5.54
+   },
+   {
+    "variant": "adaptation (default)",
+    "uncertainty": "extreme",
+    "rate": 0.67,
+    "ci95": [
+     0.627624826873818,
+     0.709782802825675
+    ],
+    "median_settling_s": 6.550000000000001
+   },
+   {
+    "variant": "adaptation + convergence gate",
+    "uncertainty": "extreme",
+    "rate": 0.49,
+    "ci95": [
+     0.4464253815391932,
+     0.5337271108314249
+    ],
+    "median_settling_s": 6.0200000000000005
+   }
+  ]
+ },
+ "delay": {
+  "delay_steps": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "delay_ms": [
+   0.0,
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   60.0,
+   70.0,
+   80.0,
+   90.0,
+   100.0,
+   110.0,
+   120.0,
+   130.0,
+   140.0,
+   150.0
+  ],
+  "rho": {
+   "pid": [
+    0.9963422217815172,
+    0.9963424708103114,
+    0.996342718759781,
+    0.9963429656355117,
+    0.9963432114430683,
+    0.9963434561879795,
+    1.0046690888478005,
+    1.0156017702531017,
+    1.0238511239029062,
+    1.0301347085223396,
+    1.0349632458891105,
+    1.0387017740898947,
+    1.0416136330382244,
+    1.0438910382363182,
+    1.0456760722462377,
+    1.0470750943942635
+   ],
+   "pole_placement": [
+    0.9801986733067551,
+    0.9806343359348558,
+    0.981035951437471,
+    0.9814017836370609,
+    0.9817345384959355,
+    0.9820380089122284,
+    0.9878903258271368,
+    1.0063415273311656,
+    1.0191497037301804,
+    1.0282939547223264,
+    1.034962859509549,
+    1.039904852132897,
+    1.0436098702867658,
+    1.0464091849372072,
+    1.0485329958773855,
+    1.0501450542729596
+   ],
+   "lqr_ideal": [
+    0.9849546039849334,
+    0.9850253176945946,
+    0.9850938498823103,
+    0.9851603045334368,
+    0.985224779852998,
+    1.0105520655516893,
+    1.0318645058307518,
+    1.0453642629865076,
+    1.0541841435566814,
+    1.0600552590747596,
+    1.063993834020326,
+    1.066625914878769,
+    1.068352611346733,
+    1.069439383177355,
+    1.0700667460814886,
+    1.0703602993549375
+   ],
+   "lqg": [
+    0.9849546039849334,
+    0.9850253176945939,
+    0.9850938498823133,
+    0.9851603045334383,
+    0.9852247798529944,
+    1.0105520655516917,
+    1.031864505830753,
+    1.0453642629865056,
+    1.0541841435566806,
+    1.0600552590747627,
+    1.063993834020329,
+    1.0666259148787691,
+    1.068352611346734,
+    1.0694393831773579,
+    1.0700667460814854,
+    1.0703602993549435
+   ],
+   "lqg_delay": [
+    0.9849546039849334,
+    0.9849546039849435,
+    0.9849546039849443,
+    0.984954603984935,
+    0.9849546039849496,
+    0.9849546039849358,
+    0.9849546039849381,
+    0.984954603984944,
+    0.9849546039849638,
+    0.9849546039849352,
+    0.9849546039849234,
+    0.9849546039849663,
+    0.9849546039849445,
+    0.9849546039849452,
+    0.9849546039849423,
+    0.98495460398494
+   ]
+  },
+  "success_rate": {
+   "pid": [
+    1.0,
+    1.0,
+    0.96,
+    0.8,
+    0.67,
+    0.56,
+    0.4,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "pole_placement": [
+    1.0,
+    1.0,
+    0.99,
+    0.89,
+    0.79,
+    0.65,
+    0.47,
+    0.01,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lqr_ideal": [
+    1.0,
+    1.0,
+    1.0,
+    0.82,
+    0.59,
+    0.18,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lqg": [
+    1.0,
+    1.0,
+    0.86,
+    0.73,
+    0.6,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lqg_delay": [
+    1.0,
+    1.0,
+    0.99,
+    0.95,
+    0.89,
+    0.84,
+    0.79,
+    0.74,
+    0.71,
+    0.61,
+    0.3,
+    0.1,
+    0.02,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "max_stable_delay_ms": {
+   "pid": 50.0,
+   "pole_placement": 60.0,
+   "lqr_ideal": 40.0,
+   "lqg": 40.0,
+   "lqg_delay": 150.0
+  }
+ },
+ "sampling": {
+  "Ts": [
+   0.005,
+   0.01,
+   0.015,
+   0.02,
+   0.025,
+   0.03,
+   0.035,
+   0.04,
+   0.05,
+   0.06,
+   0.08,
+   0.1,
+   0.12,
+   0.15
+  ],
+  "rho_emulated": [
+   0.9924723701335115,
+   0.985046676652351,
+   0.9777191576118137,
+   0.9704862551949616,
+   0.9633446016955444,
+   0.9562910065987823,
+   1.046814383244495,
+   1.13428404487187,
+   1.3019320737530107,
+   1.463063270508432,
+   1.7748997468714443,
+   2.0814862046460294,
+   2.3890121710652714,
+   2.8602812606780197
+  ],
+  "rho_discrete": [
+   0.9924656601207381,
+   0.9850253176945946,
+   0.9776834880449478,
+   0.9704449557743452,
+   0.9633147419484188,
+   0.9562980634686529,
+   0.9494002849572235,
+   0.9928304619033921,
+   1.102844064622487,
+   1.2005898052456805,
+   1.371249649911872,
+   1.5208605430666546,
+   1.6583272058286513,
+   1.8531887500603705
+  ],
+  "rho_discrete_comp": [
+   0.9924487596336148,
+   0.9849546039849446,
+   0.9775171640001296,
+   0.970136071913729,
+   0.9628109612218778,
+   0.9555414666569868,
+   0.9483272241641054,
+   0.9411678708786789,
+   0.9270123863013932,
+   0.913072133066809,
+   0.8858258900959454,
+   0.8594064529039624,
+   0.8337914011203569,
+   0.7968286487183962
+  ],
+  "K_continuous": [
+   -11.999999999999812,
+   -11.811633050825149,
+   -59.249272538147686,
+   -10.067654481077092
+  ],
+  "max_stable_Ts_s": {
+   "rho_emulated": 0.03,
+   "rho_discrete": 0.04,
+   "rho_discrete_comp": 0.15
+  }
+ }
+}
