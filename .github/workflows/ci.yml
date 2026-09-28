@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  MPLBACKEND: Agg
+  PYTHONHASHSEED: "0"
+
+jobs:
+  lint:
+    name: Lint & type-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: pip install -e ".[dev]"
+      - name: ruff (lint)
+        run: ruff check src tests
+      - name: ruff (format)
+        run: ruff format --check src tests
+      - name: mypy (strict)
+        run: python -m mypy
+
+  test:
+    name: Tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: pip install -e ".[dev]"
+      - name: pytest
+        run: python -m pytest --cov=pendulum_lab --cov-report=term-missing
+
+  reproducibility:
+    name: Docs are in sync with results
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -e .
+      - name: Regenerate README tables from docs/results/results.json
+        run: pendulum-lab report
+      - name: Fail if README or tables drifted from the committed results
+        run: git diff --exit-code README.md docs/results/tables.md
+      - name: Asset budget (GIF < 5 MB, no file > 5 MB in docs/)
+        run: |
+          find docs -type f -size +5M -print -exec false {} +
+      - name: Smoke-run the full pipeline (reduced sizes)
+        run: pendulum-lab all --quick --no-gif --img /tmp/img --results /tmp/results --readme /tmp/none.md
